@@ -1,0 +1,44 @@
+const NFTs = [];
+
+/**
+ * Function to mint a new NFT.
+ * @param {string} name - The name of the NFT owner.
+ * @param {string} job - The job of the NFT owner.
+ * @param {string} city - The city where the NFT owner lives.
+ */
+function mintNFT(name, job, city) {
+    const newNFT = { name, job, city };
+    NFTs.push(newNFT);
+    console.log(`Minted NFT: ${name}`);
+}
+
+/**
+ * Function to list all minted NFTs.
+ */
+function listNFTs() {
+    if (NFTs.length === 0) {
+        console.log("No NFTs have been minted yet.");
+        return;
+    }
+
+    NFTs.forEach((nft, index) => {
+        console.log(`NFT ${index + 1}:`, nft);
+    });
+}
+/**
+ * Function to get the total number of NFTs minted.
+ */
+function getTotalSupply() {
+    console.log(`Total NFTs Minted: ${NFTs.length}`);
+}
+
+// Minting four NFTs
+mintNFT("Dhruv", "Developer", "India");
+mintNFT("Abhishek", "Developer", "India");
+mintNFT("Rahul", "Designer", "India");
+mintNFT("Shubham", "Manager", "India");
+
+// Listing all NFTs
+listNFTs();
+
+getTotalSupply();
