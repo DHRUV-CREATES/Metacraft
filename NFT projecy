@@ -1,0 +1,30 @@
+let nfts = [];
+
+function mintNFT(name, eyeColor, shirtType, bling) {
+    let nft = { name, eyeColor, shirtType, bling };
+    nfts.push(nft);
+}
+
+function listNFTs() {
+    for (let i = 0; i < nfts.length; i++) {
+        console.log("NFT " + (i + 1) + ":");
+        console.log("Name: " + nfts[i].name);
+        console.log("Eye Color: " + nfts[i].eyeColor);
+        console.log("Shirt Type: " + nfts[i].shirtType);
+        console.log("Bling: " + nfts[i].bling);
+        console.log("");
+    }
+}
+
+function getTotalSupply() {
+    return nfts.length;
+}
+
+mintNFT("ArtPiece Shop #1", "Blue", "T-Shirt", "Gold Chain");
+mintNFT("ArtPiece Shop #2", "Green", "Hoodie", "Silver Ring");
+mintNFT("ArtPiece Shop #3", "Brown", "Jacket", "Diamond Earring");
+mintNFT("ArtPiece Shop #4", "Black", "Sweater", "Platinum Watch");
+
+listNFTs();
+
+console.log("Total Supply: " + getTotalSupply());
