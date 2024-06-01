@@ -1,0 +1,46 @@
+// Create an array to hold your NFTs
+let nfts = [];
+
+// This function creates an NFT object and adds it to the array
+function mintNFT(name, eyeColor, shirtType, bling) {
+    // Create an NFT object with the provided metadata
+    let nft = {
+        name: name,
+        eyeColor: eyeColor,
+        shirtType: shirtType,
+        bling: bling
+    };
+    // Add the NFT object to the nfts array
+    nfts.push(nft);
+}
+
+// This function prints all the NFTs in the array
+function listNFTs() {
+    // Loop through the nfts array
+    for (let i = 0; i < nfts.length; i++) {
+        // Print the metadata of each NFT
+        console.log("NFT " + (i + 1) + ":");
+        console.log("Name: " + nfts[i].name);
+        console.log("Eye Color: " + nfts[i].eyeColor);
+        console.log("Shirt Type: " + nfts[i].shirtType);
+        console.log("Bling: " + nfts[i].bling);
+        console.log(""); // Add an empty line for better readability
+    }
+}
+
+// This function returns the total number of NFTs
+function getTotalSupply() {
+    return nfts.length;
+}
+
+// Mint 4 NFTs with different names
+mintNFT("ArtPiece Shop #1", "Blue", "T-Shirt", "Gold Chain");
+mintNFT("ArtPiece Shop #2", "Green", "Hoodie", "Silver Ring");
+mintNFT("ArtPiece Shop #3", "Brown", "Jacket", "Diamond Earring");
+mintNFT("ArtPiece Shop #4", "Black", "Sweater", "Platinum Watch");
+
+// List all NFTs
+listNFTs();
+
+// Print the total number of NFTs
+console.log("Total Supply: " + getTotalSupply());
